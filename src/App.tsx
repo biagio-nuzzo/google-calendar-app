@@ -6,6 +6,7 @@ import {
   CalendarStatsOverview,
 } from "./ui/molecules";
 import { Alert } from "./ui/atoms";
+import { useMemo } from "react";
 
 // Hooks
 import { useGoogleAuth } from "./hooks/useGoogleAuth";
@@ -27,8 +28,8 @@ function App() {
     clearSession,
   } = useGoogleAuth();
 
-  // Ottieni range temporale (ultimo anno)
-  const { timeMin, timeMax } = getDefaultTimeRange();
+  // Ottieni range temporale (ultimo anno) solo una volta per evitare refetch continui
+  const { timeMin, timeMax } = useMemo(() => getDefaultTimeRange(), []);
 
   // Usa hook calendario solo se autenticato
   const {

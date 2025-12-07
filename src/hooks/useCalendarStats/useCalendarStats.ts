@@ -351,11 +351,17 @@ export function useCalendarStats(params: UseCalendarStatsParams): UseCalendarSta
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const calendarsToUse = calendarIds && calendarIds.length > 0 ? calendarIds : ['primary'];
+  const calendarsKey = calendarIds?.join('|') ?? 'primary';
+  const calendarsToUse = useMemo(
+    () => (calendarIds && calendarIds.length > 0 ? calendarIds : ['primary']),
+    [calendarsKey]
+  );
 
   const fetchEvents = useCallback(async () => {
     if (!accessToken) {
-      setError('Missing access token');
+      setEvents(null);
+      setLoading(false);
+      setError(null);
       return;
     }
 
