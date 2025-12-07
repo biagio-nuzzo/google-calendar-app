@@ -9,7 +9,7 @@ import { useGoogleAuth } from "./hooks/useGoogleAuth";
 import { getDefaultTimeRange } from "./constants/calendar";
 
 // Pages
-import { CalendarWrappedPage } from "./pages/CalendarWrappedPage";
+import { CalendarWrappedPage } from "./pages/CalendarWrapped";
 
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
