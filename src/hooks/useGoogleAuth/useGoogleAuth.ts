@@ -7,7 +7,7 @@ const CALENDAR_SCOPE = 'https://www.googleapis.com/auth/calendar.readonly';
 export function useGoogleAuth(): UseGoogleAuthReturn {
   const [tokenClient, setTokenClient] = useState<TokenClient | null>(null);
   const [accessToken, setAccessToken] = useState('');
-  const [status, setStatus] = useState('Pronto per il login con Google.');
+  const [status, setStatus] = useState('');
   const [error, setError] = useState('');
   const [scriptReady, setScriptReady] = useState(false);
 
@@ -65,7 +65,7 @@ export function useGoogleAuth(): UseGoogleAuthReturn {
 
       setTokenClient(client);
       setScriptReady(true);
-      setStatus('Pronto per il login con Google.');
+      setStatus('');
     };
 
     ensureGoogleScript()
