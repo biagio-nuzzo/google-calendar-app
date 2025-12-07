@@ -40,26 +40,26 @@ export function createCrewCard({ stats }: CrewCardProps): ReactNode | null {
       gradientFrom="from-violet-600"
       gradientTo="to-purple-600"
     >
-      <div className="space-y-4 max-w-lg mx-auto">
+      <div className="space-y-3 sm:space-y-4 max-w-2xl mx-auto">
         {stats.topCollaborators.slice(0, 5).map((collab, idx) => (
           <div
             key={collab.email}
-            className="bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-between"
+            className="bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg sm:rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold">
+            <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center font-bold text-white text-sm sm:text-base shrink-0">
                 {idx + 1}
               </div>
-              <div className="text-left">
-                <div className="font-semibold">
+              <div className="text-left min-w-0 flex-1">
+                <div className="font-semibold text-gray-800 text-sm sm:text-base truncate">
                   {collab.email}
                 </div>
-                <div className="text-sm text-white/70">
+                <div className="text-xs sm:text-sm text-gray-600">
                   {collab.eventCount} events
                 </div>
               </div>
             </div>
-            <div className="text-xl font-bold">
+            <div className="text-lg sm:text-xl font-bold text-gray-900 ml-9 sm:ml-0">
               {minutesToHours(collab.totalMinutes)}h
             </div>
           </div>

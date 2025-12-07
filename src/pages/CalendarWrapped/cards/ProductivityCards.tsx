@@ -20,23 +20,23 @@ export function createMeetingVsFocusCard({
       gradientFrom="from-blue-600"
       gradientTo="to-indigo-600"
     >
-      <div className="space-y-6">
-        <div className="flex items-center justify-center gap-8 text-5xl font-bold">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <div>
-            <div className="text-6xl">{meetingPercent}%</div>
-            <div className="text-xl font-normal text-white/80 mt-2">
+            <div className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{meetingPercent}%</div>
+            <div className="text-base sm:text-lg md:text-xl font-normal text-gray-600 mt-2">
               Meetings
             </div>
           </div>
-          <div className="text-white/40 text-3xl">vs</div>
+          <div className="text-gray-400 text-2xl sm:text-3xl">vs</div>
           <div>
-            <div className="text-6xl">{focusPercent}%</div>
-            <div className="text-xl font-normal text-white/80 mt-2">Focus</div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">{focusPercent}%</div>
+            <div className="text-base sm:text-lg md:text-xl font-normal text-gray-600 mt-2">Focus</div>
           </div>
         </div>
-        <div className="h-4 bg-white/20 rounded-full overflow-hidden flex">
-          <div className="bg-blue-400" style={{ width: `${meetingPercent}%` }} />
-          <div className="bg-green-400" style={{ width: `${focusPercent}%` }} />
+        <div className="h-3 sm:h-4 bg-gray-200 rounded-full overflow-hidden flex">
+          <div className="bg-blue-500" style={{ width: `${meetingPercent}%` }} />
+          <div className="bg-green-500" style={{ width: `${focusPercent}%` }} />
         </div>
       </div>
     </WrappedCard>
@@ -63,27 +63,27 @@ export function createRemoteVsOnsiteCard({
       gradientFrom="from-cyan-600"
       gradientTo="to-blue-600"
     >
-      <div className="space-y-6">
-        <div className="flex items-center justify-center gap-8 text-5xl font-bold">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <div>
-            <div className="text-6xl">{remotePercent}%</div>
-            <div className="text-xl font-normal text-white/80 mt-2">Remote</div>
+            <div className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">{remotePercent}%</div>
+            <div className="text-base sm:text-lg md:text-xl font-normal text-gray-600 mt-2">Remote</div>
           </div>
-          <div className="text-white/40 text-3xl">vs</div>
+          <div className="text-gray-400 text-2xl sm:text-3xl">vs</div>
           <div>
-            <div className="text-6xl">{onsitePercent}%</div>
-            <div className="text-xl font-normal text-white/80 mt-2">
+            <div className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">{onsitePercent}%</div>
+            <div className="text-base sm:text-lg md:text-xl font-normal text-gray-600 mt-2">
               On-site
             </div>
           </div>
         </div>
-        <div className="h-4 bg-white/20 rounded-full overflow-hidden flex">
+        <div className="h-3 sm:h-4 bg-gray-200 rounded-full overflow-hidden flex">
           <div
-            className="bg-cyan-400"
+            className="bg-cyan-500"
             style={{ width: `${remotePercent}%` }}
           />
           <div
-            className="bg-orange-400"
+            className="bg-orange-500"
             style={{ width: `${onsitePercent}%` }}
           />
         </div>
