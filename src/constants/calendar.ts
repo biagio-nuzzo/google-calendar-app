@@ -55,14 +55,10 @@ export const WEEKDAY_NAMES = [
   'Sabato',
 ];
 
-// Range temporale di default (ultimo anno)
+// Range temporale di default (01/01/2025 - 31/12/2025)
 export function getDefaultTimeRange(): { timeMin: string; timeMax: string } {
-  const now = new Date();
-  const oneYearAgo = new Date(now);
-  oneYearAgo.setFullYear(now.getFullYear() - 1);
-
   return {
-    timeMin: oneYearAgo.toISOString(),
-    timeMax: now.toISOString(),
+    timeMin: new Date('2025-01-01T00:00:00').toISOString(),
+    timeMax: new Date('2025-12-31T23:59:59').toISOString(),
   };
 }

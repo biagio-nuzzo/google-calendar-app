@@ -17,9 +17,7 @@ export function createTopCollaboratorCard({
       key="partner"
       title="Your Partner in Crime"
       subtitle="You spent the most time with..."
-      highlight={
-        topCollaborator.displayName || topCollaborator.email.split('@')[0]
-      }
+      highlight={topCollaborator.email}
       description={`${minutesToHours(topCollaborator.totalMinutes)} hours together across ${topCollaborator.eventCount} events.`}
       gradientFrom="from-pink-600"
       gradientTo="to-rose-600"
@@ -54,7 +52,7 @@ export function createCrewCard({ stats }: CrewCardProps): ReactNode | null {
               </div>
               <div className="text-left">
                 <div className="font-semibold">
-                  {collab.displayName || collab.email.split('@')[0]}
+                  {collab.email}
                 </div>
                 <div className="text-sm text-white/70">
                   {collab.eventCount} events

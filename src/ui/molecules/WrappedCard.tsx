@@ -42,7 +42,7 @@ export function WrappedCard({
         {highlight && (
           <div className="py-8">
             {typeof highlight === 'string' ? (
-              <div className="text-7xl md:text-8xl font-black tracking-tighter drop-shadow-2xl">
+              <div className="text-4xl md:text-5xl font-black tracking-tight drop-shadow-2xl break-words px-4">
                 {highlight}
               </div>
             ) : (
